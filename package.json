@@ -1,4 +1,24 @@
 {
+  "name": "rabbitmq-test",
+  "description": "",
+  "version": "1.0.0",
+  "main": "sender.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node -r dotenv/config sender.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayanYousefi/rabbitmq-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shayanYousefi/rabbitmq-test/issues"
+  },
+  "homepage": "https://github.com/shayanYousefi/rabbitmq-test#readme",
   "dependencies": {
     "amqplib": "^0.8.0",
     "dotenv": "^10.0.0"
