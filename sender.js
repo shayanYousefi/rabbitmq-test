@@ -17,9 +17,7 @@ amqp.connect(`amqp://${process.env.RABBIT_HOST}:${process.env.RABBIT_PORT}`, fun
             questionFileLink: 'rabbit-questionFileLink'
         };
 
-        channel.assertQueue(queue, {
-            durable: false
-        });
+        channel.assertQueue(queue, {});
         eventRepeater = setInterval(() => {
             channel.sendToQueue(queue, Buffer.from(msg));
             console.log(`[messageCount:${counter++}] Sent ${JSON.stringify(msg)} to ${queue}`);
