@@ -19,7 +19,7 @@ amqp.connect(`amqp://${process.env.RABBIT_HOST}:${process.env.RABBIT_PORT}`, fun
 
         channel.assertQueue(queue, {});
         eventRepeater = setInterval(() => {
-            channel.sendToQueue(queue, Buffer.from(msg));
+            channel.sendToQueue(queue, Buffer.from(JSON.stringify(msg)));
             console.log(`[messageCount:${counter++}] Sent ${JSON.stringify(msg)} to ${queue}`);
         }, 3000)
 
