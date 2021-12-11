@@ -11,7 +11,7 @@ amqp.connect(`amqp://${process.env.RABBIT_HOST}:${process.env.RABBIT_PORT}`, fun
             throw error1;
         }
 
-        let queue = process.env[`question-file-link`];
+        let queue = process.env.RABBIT_QUEUE_NAME;
         let msg = {
             examId: 'rabbit-examId',
             questionFileLink: 'rabbit-questionFileLink'
